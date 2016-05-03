@@ -1,0 +1,33 @@
+<!-- demo.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ job.company_name }}</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+    {% for job in job_list %}
+        <h2 class="title">
+        <a href="{% url 'job_detail' pk=job.pk %}">{{ job.company_name }}</a>
+        </h2>
+        <div>
+        {{ job.job_title }}
+        </div>
+        <div>
+        {{ job.depiction }}
+        </div>
+        <div>
+        {{ job.start_at }}
+        </div>
+        <div>
+        {{ job.end_at }}
+        </div>
+        <a class="read-more" href="{% url 'job_detail' pk=job.pk %}">
+        Read More <i class="fa fa-arrow-right"></i>
+        </a>
+    {% endfor %}
+</body>
+</html>

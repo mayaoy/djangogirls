@@ -1,0 +1,34 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{ job.company_name }}</title>
+    <link href="//fonts.googleapis.com/css?family=Lemon" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//djangogirlstaipei.github.io/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    {% for job in job_list %}
+        <h2 class="title">
+        <a href="{% url 'job_detail' pk=job.pk %}">{{ job.company_name }}</a>
+        </h2>
+        <div>
+        {{ job.job_title }}
+        </div>
+        <div>
+        {{ job.depiction }}
+        </div>
+        <div>
+        {{ job.start_at }}
+        </div>
+        <div>
+        {{ job.end_at }}
+        </div>
+        <a class="read-more" href="{% url 'job_detail' pk=job.pk %}">
+        Read More <i class="fa fa-arrow-right"></i>
+        </a>
+    {% endfor %}
+</body>
+</html>
