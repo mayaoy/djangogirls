@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'mayouyang/static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure().
